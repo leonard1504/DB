@@ -4,6 +4,7 @@
 * [Kafka](#kafka)
 * [Redis](#redis)
 * [MongoDB](#mongodb)
+* [Key-Value vs. Dokumentenbasiert](#key-value-vs-dokumentenbasiert)
 
 ## Data Lake vs. Data Warehouse
 | Data Lake  | Data Warehouse |
@@ -144,6 +145,16 @@ zusammen: Kafka Cluster
 ![Kafka in all his glory](./img/kafka.png)
 ## Redis 
 [Redis EBook](https://redis.com/ebook/part-1-getting-started/)
+[Redis Commands](https://redis.io/commands/)
+Redis ist eine Key-Value-Datenbank
+**ACHTUNG ChatGPT Antwort**
+
+Eine Key-Value Datenbank ist eine Art von Datenbank, die Daten als Schlüssel-Wert-Paare speichert. Ein Schlüssel ist ein eindeutiger Bezeichner, der einem bestimmten Wert zugeordnet ist. Der Wert kann ein beliebiger Datentyp sein, wie zum Beispiel eine Zeichenfolge, eine Zahl oder ein Binärobjekt.
+
+Der Nutzen einer Key-Value Datenbank besteht darin, dass sie sehr schnell ist und eine einfache Art und Weise bietet, Daten zu speichern und abzurufen. Sie sind auch sehr skalierbar und können problemlos große Mengen an Daten verarbeiten.
+
+Key-Value Datenbanken sind in vielen Anwendungen nützlich, in denen schnelle Lese- und Schreibzugriffe auf einzelne Datenwerte erforderlich sind. Sie werden oft in Anwendungen verwendet, die eine hohe Verfügbarkeit benötigen, wie zum Beispiel in der E-Commerce-Branche, bei der es wichtig ist, dass die Daten jederzeit abrufbar sind. Key-Value Datenbanken eignen sich auch gut für den Einsatz in verteilten Systemen, da sie leicht repliziert werden können, um die Verfügbarkeit und die Leistung zu verbessern.
+
 1. Mit welchem Kommando wird in Redis eine Datenbank erzeugt (analog zu "CREATE" in SQL)
 
 **A: SET?**
@@ -155,3 +166,13 @@ zusammen: Kafka Cluster
 3. Redis ist eine in-________ Datenbank, und daher besonders schnell.
 
 **A: in-memory Datenbank, schnell aber teuer**
+
+## MongoDB
+
+## Key-Value vs. Dokumentenbasiert
+| Key-Value | Dokumentenbasiert |
+| --------- | ----------------- |
+| Key-Value Datenbanken eignen sich am besten für Daten, die als einzelne Werte oder kleine Mengen strukturierter Daten organisiert sind. | Dokumentenbasierte Datenbanken eignen sich besser für größere Mengen strukturierter oder unstrukturierter Daten, die in Form von Dokumenten gespeichert werden.|
+| Key-Value Datenbanken bieten in der Regel eine einfache Möglichkeit, Daten anhand ihres Schlüssels abzurufen, aber keine komplexen Abfragefunktionen. | Dokumentenbasierte Datenbanken bieten in der Regel umfangreichere Abfragefunktionen und ermöglichen es, nach bestimmten Feldern innerhalb von Dokumenten zu suchen. |
+|Key-Value Datenbanken sind in der Regel sehr skalierbar und eignen sich daher gut für Anwendungen mit hohem Datenvolumen und hoher Last.|Dokumentenbasierte Datenbanken können ebenfalls skalierbar sein, aber ihre Skalierbarkeit hängt oft von der Art der Daten und der Abfragen ab, die sie unterstützen müssen.|
+|Key-Value Datenbanken sollten genutzt werden, wenn schnelle Lese- und Schreibzugriffe auf einzelne Datenwerte benötigt werden und wenn die Daten, die gespeichert werden, in der Regel als einzelne Werte oder kleine Mengen strukturierter Daten organisiert sind.|Dokumentenbasierte Datenbanken sollten genutzt werden, wenn größere Mengen strukturierter oder unstrukturierter Daten gespeichert werden müssen und wenn komplexere Abfragen ausgeführt werden müssen.|
