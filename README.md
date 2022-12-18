@@ -66,13 +66,13 @@ State ist die „Zusammenfassung“ der Events.
   * Real-time Inventory
   * Real-time recommendations
 
-ESP: Event Streaming Platform
+**ESP: Event Streaming Platform**
 * Events
   * Irgendetwas "wichtiges" passiert
   * "an entity‘s observable state over time"
 * Beispiele s.o.
 
-Mehr Beispiele Was Events sind und Wer Events braucht
+**Mehr Beispiele Was Events sind und Wer Events braucht**
 * Autos
 * IoT, Edge Devices
 * Datencenter
@@ -82,14 +82,14 @@ Mehr Beispiele Was Events sind und Wer Events braucht
 * Microservices
 * Data Lakes, Datenbanken
 
-Typische Formate der Daten sind
+**Typische Formate der Daten sind**
 * primitive Daten (int, string, etc.)
 * Key-Value-Paar:
   * Key: "car_id_xyz"
   * Value: (44.87, -78.43)
   * (optional: mit timestamp: 17.03.2022 14h17:22)
 
-Event Streaming
+**Event Streaming**
 * 1 Sender, 1 Empfänger
   * Sender: all die schönen Datenquellen, die beim E von ETL anstehen (Extract Load Transform)
   * Empfänger: all die schönen "L"-Destinations UND aber auch:
@@ -100,9 +100,11 @@ Event Streaming
   * wir n Sender und m Empfänger haben? UND
   * Empfänger auch Sender sein sollen? UND
   * Verschiedene Protokolle genutzt werden (FTP, HTTP, JDBC, SCP, etc.)
-Antwort: Publish-Subscribe
-[Event Streaming example](./img/eventstreaming.png)
-Ziel
+**Antwort: Publish-Subscribe**
+
+![Event Streaming example](./img/eventstreaming.png)
+
+**Ziel**
 * Alle "Events" für alle (Interessierten) zur Verfügung stellen
 * Real-Time (nicht Batch wie in Airflow) aber auch "verlangsamen" (handle back-pressure) wenn nötig
 * Und wenn nötig, alle Events (für potentiell immer) aufbewahren, so dass man neue "Zusammenfassungen" machen kann.
@@ -118,12 +120,15 @@ Kafka-Client-Server-Architektur
 * Wunderbar Skalierbar
 * Replication: Sicherheit
 * Persistency: Kann jederzeit auf alle Daten zugreifen (ist also NICHT Streaming im klassichen Sinn)
-Event Streaming Platform (ESP)
-Aufgaben:
+
+**Event Streaming Platform** (ESP)
+
+**Aufgaben:**
 * To publish (write) and subscribe to (read) streams of events, including continous import/export of your data from other systems.
 * To store streams of events durably and relaibly for as long as you want
 * To process streams of events as they occur or retrospectively
-Komponenten:
+
+**Komponenten:**
 * Broker: einzelner „Rechner“ mit eigenem Storage (wo Daten
 „beliebig“ lang aufgehoben werden können). Viele Broker
 zusammen: Kafka Cluster
@@ -133,4 +138,5 @@ zusammen: Kafka Cluster
   * Consumption (Distribution, genau so beschauerter Begriff wie das L in ETL)
 * Event Storage
 * Analytic and Query Engine
-[Kafka in all his glory](./img/kafka.png)
+
+![Kafka in all his glory](./img/kafka.png)
