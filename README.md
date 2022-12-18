@@ -1,5 +1,5 @@
 ## Inhalt
-* [Data Lake vs. Data Warehouse](#data-lake-vs.-data-warehouse)
+* [Data Lake vs. Data Warehouse](#data-lake-vs-data-warehouse)
 * [Cronjob vs. Airflow](#cron-vs-airflow)
 
 ## Data Lake vs. Data Warehouse
@@ -21,3 +21,12 @@ Was ist ein Data Warehouse (DWH)?
 * Sind bereits für bestimmten Zweck verarbeitet
 * Struktur und Schema der Daten bereits definiert
 * Für Analyse der Daten aus Transaktionssystemen optimiert
+
+## Cron vs. Airflow
+Cronjobs
+* Können eine Aktion zu einem bestimmten Zeitpunkt ausführen
+
+Airflow
+* Können eine Aktion zu einem bestimmten Zeitpunkt ausführen
+* Können "bedingt" ausgeführt werden, d.h. wenn eine Aktion durchgeführt wurde, wird automatisch die nächste dann durchgeführt
+* Wichtige Operator sind PythonOperator, BashOperator & DateTimeOperator
