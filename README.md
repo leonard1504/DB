@@ -147,7 +147,9 @@ zusammen: Kafka Cluster
 [Redis EBook](https://redis.com/ebook/part-1-getting-started/)
 [Redis Commands](https://redis.io/commands/)
 Redis ist eine Key-Value-Datenbank
+
 **ACHTUNG ChatGPT Antwort**
+
 
 Eine Key-Value Datenbank ist eine Art von Datenbank, die Daten als Schlüssel-Wert-Paare speichert. Ein Schlüssel ist ein eindeutiger Bezeichner, der einem bestimmten Wert zugeordnet ist. Der Wert kann ein beliebiger Datentyp sein, wie zum Beispiel eine Zeichenfolge, eine Zahl oder ein Binärobjekt.
 
