@@ -2,6 +2,8 @@
 * [Data Lake vs. Data Warehouse](#data-lake-vs-data-warehouse)
 * [Cronjob vs. Airflow](#cron-vs-airflow)
 * [Kafka](#kafka)
+* [Redis](#redis)
+* [MongoDB](#mongodb)
 
 ## Data Lake vs. Data Warehouse
 | Data Lake  | Data Warehouse |
@@ -140,3 +142,16 @@ zusammen: Kafka Cluster
 * Analytic and Query Engine
 
 ![Kafka in all his glory](./img/kafka.png)
+## Redis 
+[Redis EBook](https://redis.com/ebook/part-1-getting-started/)
+1. Mit welchem Kommando wird in Redis eine Datenbank erzeugt (analog zu "CREATE" in SQL)
+
+**A: SET?**
+
+2. Wie viele verschiedene Datentypen kann Redis abspeichern?
+
+**A: Strings, Lists, Sets, Hashes (Die wichtigsten) sonst noch Streams, Geospatial, HyperLogLog, Bitmaps, Bitfields**
+
+3. Redis ist eine in-________ Datenbank, und daher besonders schnell.
+
+**A: in-memory Datenbank, schnell aber teuer**
