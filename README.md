@@ -145,8 +145,12 @@ zusammen: Kafka Cluster
 ![Kafka in all his glory](./img/kafka.png)
 ## Redis 
 [Redis EBook](https://redis.com/ebook/part-1-getting-started/)
+
 [Redis Commands](https://redis.io/commands/)
+
 Redis ist eine Key-Value-Datenbank
+
+Häufiger Anwendungsfall von Redis ist Caching von Informationen zum schnelleren laden
 
 **ACHTUNG ChatGPT Antwort**
 
@@ -170,6 +174,26 @@ Key-Value Datenbanken sind in vielen Anwendungen nützlich, in denen schnelle Le
 **A: in-memory Datenbank, schnell aber teuer**
 
 ## MongoDB
+MongoDB ist eine Dokumentenbasierte NoSQL-Datenbank (Not only SQL)
+
+Updating Performance von MongoDB bei großen Datensätzen "nicht so gut"
+
+Authentifizierungs Aufgabe
+1. Auf welchen Ebenen gibt es Authentication?
+
+**A: Docker und Datenbank**
+
+Wie unterscheiden sich die beiden oben behandelten Ansätze?
+
+**A: Bei dem einen wird der Zugriff auf den Docker mit einer Authentifizierung geschützt aber nicht die DB im Hintergrund bei dem anderen wird der direkte Zugriff auf die DB per Authentifizierung geschützt**
+
+Wo/wann ist dies relevant?
+
+**A: Produktiven Datenbanken, damit die Daten nicht verfälscht oder gestohlen werden**
+
+Welche Art von Authentication ist in der Praxis wohl wichtiger?
+
+**A: Die direkte Absicherung der Datenbank und nicht der Umgebung der DB**
 
 ## Key-Value vs. Dokumentenbasiert
 | Key-Value | Dokumentenbasiert |
