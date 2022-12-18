@@ -183,15 +183,15 @@ Authentifizierungs Aufgabe
 
 **A: Docker und Datenbank**
 
-Wie unterscheiden sich die beiden oben behandelten Ansätze?
+2. Wie unterscheiden sich die beiden oben behandelten Ansätze?
 
 **A: Bei dem einen wird der Zugriff auf den Docker mit einer Authentifizierung geschützt aber nicht die DB im Hintergrund bei dem anderen wird der direkte Zugriff auf die DB per Authentifizierung geschützt**
 
-Wo/wann ist dies relevant?
+3. Wo/wann ist dies relevant?
 
 **A: Produktiven Datenbanken, damit die Daten nicht verfälscht oder gestohlen werden**
 
-Welche Art von Authentication ist in der Praxis wohl wichtiger?
+4. Welche Art von Authentication ist in der Praxis wohl wichtiger?
 
 **A: Die direkte Absicherung der Datenbank und nicht der Umgebung der DB**
 
