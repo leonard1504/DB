@@ -205,7 +205,7 @@ Authentifizierungs Aufgabe
 |Key-Value Datenbanken sollten genutzt werden, wenn schnelle Lese- und Schreibzugriffe auf einzelne Datenwerte benötigt werden und wenn die Daten, die gespeichert werden, in der Regel als einzelne Werte oder kleine Mengen strukturierter Daten organisiert sind.|Dokumentenbasierte Datenbanken sollten genutzt werden, wenn größere Mengen strukturierter oder unstrukturierter Daten gespeichert werden müssen und wenn komplexere Abfragen ausgeführt werden müssen.|
 
 ## Chat
-[Chat](chat.openai.com)
+[Chat](https://chat.openai.com/chat)
 
 ## Indexing
 
