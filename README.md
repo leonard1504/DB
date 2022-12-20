@@ -5,6 +5,7 @@
 * [Redis](#redis)
 * [MongoDB](#mongodb)
 * [Key-Value vs. Dokumentenbasiert](#key-value-vs-dokumentenbasiert)
+* [Indexing](#indexing)
 
 ## Data Lake vs. Data Warehouse
 | Data Lake  | Data Warehouse |
@@ -202,3 +203,41 @@ Authentifizierungs Aufgabe
 | Key-Value Datenbanken bieten in der Regel eine einfache Möglichkeit, Daten anhand ihres Schlüssels abzurufen, aber keine komplexen Abfragefunktionen. | Dokumentenbasierte Datenbanken bieten in der Regel umfangreichere Abfragefunktionen und ermöglichen es, nach bestimmten Feldern innerhalb von Dokumenten zu suchen. |
 |Key-Value Datenbanken sind in der Regel sehr skalierbar und eignen sich daher gut für Anwendungen mit hohem Datenvolumen und hoher Last.|Dokumentenbasierte Datenbanken können ebenfalls skalierbar sein, aber ihre Skalierbarkeit hängt oft von der Art der Daten und der Abfragen ab, die sie unterstützen müssen.|
 |Key-Value Datenbanken sollten genutzt werden, wenn schnelle Lese- und Schreibzugriffe auf einzelne Datenwerte benötigt werden und wenn die Daten, die gespeichert werden, in der Regel als einzelne Werte oder kleine Mengen strukturierter Daten organisiert sind.|Dokumentenbasierte Datenbanken sollten genutzt werden, wenn größere Mengen strukturierter oder unstrukturierter Daten gespeichert werden müssen und wenn komplexere Abfragen ausgeführt werden müssen.|
+## Indexing
+
+Der Grund für Indexes (Indecies IDK)
+
+* Ohne Index muss MongoDB ALLE Datensätze anschauen! (der sogenannte „Collection Scan“)
+* Ein Index speichert ein/mehrere bestimmte Felder, egal wo im Dokument (d.h. auch subdocuments)
+* Der Index ist sortiert.
+* Dadurch kann man „equality“ matches UND „range-based“ queries machen
+* Ein Index ist auf collection-level definiert
+
+Single Field vs Compound Index
+
+[Index Help MongoDB](https://www.mongodb.com/docs/manual/core/index-compound/)
+
+* Beim Single Field Index ist es egal, wie er sortiert ist, das Ergebnis ist immer sortierbar (auf- oder absteigend)
+* (Angeblich….;-) Beim Compound Index hingegen kann man dann nur noch in der Gleichen Richtung wie im Index sortiert ausgeben
+* Präziser: der Index kann nur in der Richtung genutzt werden, wie er definiert ist
+* Bsp: { userid: 1, score: -1 } – hier geht ein
+db.events.find().sort( { userid 1, score: 1 } ) NICHT! (d.h. nutzt
+den Index nicht!)
+
+Indexing for Sorting
+
+Wenn MongoDB sortierte Ergebnisse ausgeben soll, aber kein passender Index vorhanden ist, dann wird die Datenbank gelockt („Blocking Sort“)
+**DESIGN DECISION: man muss wissen, welche Art von Sortierungen in der Praxis genutzt werden!**
+
+Prefix
+
+* Ein Prefix ist/sind alle "beginning subsets"
+ * Bsp: { "item": 1, "location": 1, "stock": 1 }
+* Hat die Prefixes:
+ * { item: 1 } und
+ * { item: 1, location: 1 }
+* MongoDB unterstützt ein Compound Index Queries für 
+ * alle prefixes und (hier: item, oder item UND location)
+ * den kompletten Index (item UND location UND Stock)
+* Was NICHT geht für diesen Index: queries nach location und oder stock
+* **DESIGN DECISION: welcher Compound Index deckt viele Queries ab?**
